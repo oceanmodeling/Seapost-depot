@@ -69,7 +69,6 @@ mpl.use('Agg')
 
 warnings.filterwarnings("ignore", category=DeprecationWarning)
 
-EFS_MOUNT_POINT = pathlib.Path('~').expanduser() / 'app/io'
 
 def ceil_dt(date=datetime.now(), delta=timedelta(minutes=30)):
     """
@@ -812,7 +811,7 @@ def folium_finalize_map(map_obj, storm_name, storm_year, Date, FCT):
 
 def main(args):
 
-    schism_dir = EFS_MOUNT_POINT / args.schismdir
+    schism_dir = args.schismdir
     storm_name = args.name
     storm_year = args.year
 
